@@ -73,4 +73,3 @@ func (r *GenericRegistry) PushImage(ctx context.Context, image, tag, digest stri
 func (r *GenericRegistry) GetRegistryURL() string {
 	return r.registry
 }
-

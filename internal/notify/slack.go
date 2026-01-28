@@ -61,4 +61,3 @@ func (c *SlackClient) SendText(ctx context.Context, text string) error {
 	}
 	return nil
 }
-

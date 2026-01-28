@@ -42,7 +42,7 @@ func (r *DockerHubRegistry) Authenticate(ctx context.Context) error {
 func (r *DockerHubRegistry) ListTags(ctx context.Context, imageName string) ([]string, error) {
 	// Docker Hub API endpoint for listing tags
 	apiURL := fmt.Sprintf("https://hub.docker.com/v2/repositories/%s/tags", imageName)
-	
+
 	req, err := http.NewRequestWithContext(ctx, "GET", apiURL, nil)
 	if err != nil {
 		return nil, err
@@ -190,12 +190,12 @@ func NormalizeDockerHubImage(imageName string) string {
 	// Remove docker.io prefix if present
 	imageName = strings.TrimPrefix(imageName, "docker.io/")
 	imageName = strings.TrimPrefix(imageName, "index.docker.io/")
-	
+
 	// If no namespace, assume library
 	parts := strings.Split(imageName, "/")
 	if len(parts) == 1 {
 		return "library/" + parts[0]
 	}
-	
+
 	return imageName
 }

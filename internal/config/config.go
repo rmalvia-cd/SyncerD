@@ -9,13 +9,13 @@ import (
 )
 
 type Config struct {
-	Source      SourceConfig      `mapstructure:"source"`
+	Source       SourceConfig        `mapstructure:"source"`
 	Destinations []DestinationConfig `mapstructure:"destinations"`
-	Images      []ImageConfig     `mapstructure:"images"`
-	Schedule    string            `mapstructure:"schedule"`
-	StatePath   string            `mapstructure:"state_path"`
-	Slack       SlackConfig        `mapstructure:"slack"`
-	FailFast    bool              `mapstructure:"fail_fast"`
+	Images       []ImageConfig       `mapstructure:"images"`
+	Schedule     string              `mapstructure:"schedule"`
+	StatePath    string              `mapstructure:"state_path"`
+	Slack        SlackConfig         `mapstructure:"slack"`
+	FailFast     bool                `mapstructure:"fail_fast"`
 }
 
 type SourceConfig struct {
@@ -35,8 +35,8 @@ type DestinationConfig struct {
 }
 
 type ImageConfig struct {
-	Name      string   `mapstructure:"name"`      // e.g., "library/nginx"
-	Tags      []string `mapstructure:"tags"`      // specific tags to sync, empty means all
+	Name      string   `mapstructure:"name"`       // e.g., "library/nginx"
+	Tags      []string `mapstructure:"tags"`       // specific tags to sync, empty means all
 	WatchTags bool     `mapstructure:"watch_tags"` // watch for new tags
 }
 

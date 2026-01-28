@@ -42,15 +42,15 @@ type Report struct {
 }
 
 type Syncer struct {
-	config          *config.Config
-	sourceRegistry  registry.Registry
-	destRegistries  []registry.Registry
-	factory         *registry.RegistryFactory
-	keychain        authn.Keychain
-	statePath       string
-	state           *state.State
-	currentReport   *Report
-	slack           *notify.SlackClient
+	config         *config.Config
+	sourceRegistry registry.Registry
+	destRegistries []registry.Registry
+	factory        *registry.RegistryFactory
+	keychain       authn.Keychain
+	statePath      string
+	state          *state.State
+	currentReport  *Report
+	slack          *notify.SlackClient
 }
 
 func NewSyncer(cfg *config.Config) (*Syncer, error) {

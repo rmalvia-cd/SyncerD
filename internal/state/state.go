@@ -9,8 +9,8 @@ import (
 )
 
 type State struct {
-	Version   int                                       `json:"version"`
-	UpdatedAt time.Time                                 `json:"updated_at"`
+	Version   int                                        `json:"version"`
+	UpdatedAt time.Time                                  `json:"updated_at"`
 	Synced    map[string]map[string]map[string]time.Time `json:"synced"` // destName -> image -> tag -> time
 }
 
@@ -104,4 +104,3 @@ func (s *State) MarkSynced(destName, image, tag string) {
 	}
 	s.Synced[destName][image][tag] = time.Now().UTC()
 }
-

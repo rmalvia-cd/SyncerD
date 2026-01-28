@@ -26,4 +26,3 @@ func (k SourceAwareKeychain) Resolve(resource authn.Resource) (authn.Authenticat
 
 	return k.Fallback.Resolve(resource)
 }
-
